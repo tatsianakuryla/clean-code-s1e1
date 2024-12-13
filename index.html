@@ -1,19 +1,56 @@
+<!DOCTYPE html>
 <html>
-<HEAD><title>Todo App</title>
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="style.css" type="text/css" MEDIA="screen" charset="utf-8">
-</HEAD>
+<head>
+    <title>Todo App</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/style.css" media="screen" charset="utf-8">
+</head>
 <body>
-<div class="aaa"><img src="./eisenhower-matrix.jpg"><a class='more_inf' href="https://goal-life.com/page/method/matrix-eisenhower">Want more details&quest;</a></div>
-<div class="centered-main-page-element"><p id='topSectionForAddingElementToList'><label for="new-task">Add Item</label><div class="task-row-wrapper"><input id='new-task'class="task" type="text"><button>Add</button></div>
-</p><h3>Todo</h3>
-<ul id='incompleteTasks'>
-<li><input type='checkbox'><label class="task">Pay Bills</label><input type="text" class="task"><button class="edit">Edit</button><button class="delete"><img src="./remove.svg"></button></li>
-<li class="editMode"><input type="checkbox"><label class="task">Go Shopping</label><input type="text" value="Go Shopping" class="task"><button class='edit'>Save</button><button class="delete"><img src="./remove.svg"></button></li>
-</ul><h3>Completed</h3><ul id="completed-tasks"><li><input type="checkbox" checked><label class="task">See the Doctor</label><input type="text" class="task"><button class="edit">Edit</button><button class="delete"><img src="./remove.svg"></button>
-</li>
-</ul>
-</div>
-<script type="text/javascript" SRC="app.js"></script>
+    <header class="header">
+        <img class="header__img" src="./src/images/eisenhower-matrix.jpg" alt="The Eisenhower matrix. How to make decisions on what is urgent and important">
+        <a class="header__link" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
+    </header>
+    <main class="todo">
+        <section class="todo__section">
+            <h1 class="hidden">TODO-list</h1>
+            <label class="todo__label todo__label_new-task" for="todo__input_new-task">Add Item</label>
+            <div class="todo__wrapper">
+                <input class="todo__input todo__input_new-task" id="todo__input_new-task" type="text">
+                <button class="todo__btn" id="todo__btn_add">Add</button>
+            </div>
+        </section>
+        <section class="todo__section">
+            <h3 class="todo__header">Todo</h3>
+            <ul class="todo__list" id="todo__list_uncompleted">
+                <li class="todo__item">
+                    <input class="todo__checkbox" type="checkbox">
+                    <label class="todo__label">Pay Bills</label>
+                    <input class="todo__input" type="text" value="Pay Bills">
+                    <button class="todo__btn todo__btn_edit">Edit</button>
+                    <button class="todo__btn todo__btn_delete" aria-label="Delete"></button>
+                </li>
+                <li class="todo__item todo__item_edit">
+                    <input class="todo__checkbox" type="checkbox">
+                    <label class="todo__label">Go Shopping</label>
+                    <input class="todo__input" type="text" value="Go Shopping">
+                    <button class="todo__btn todo__btn_edit">Save</button>
+                    <button class="todo__btn todo__btn_delete" aria-label="Delete"></button>
+                </li>
+            </ul>
+        </section>
+        <section class="todo__section">
+            <h3 class="todo__header">Completed</h3>
+            <ul class="todo__list todo__list_completed" id="todo__list_completed">
+                <li class="todo__item">
+                    <input class="todo__checkbox" type="checkbox" checked>
+                    <label class="todo__label">See the Doctor</label>
+                    <input class="todo__input" type="text" value="See the Doctor">
+                    <button class="todo__btn todo__btn_edit">Edit</button>
+                    <button class="todo__btn todo__btn_delete" aria-label="Delete"></button>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script src="./src/js/app.js"></script>
 </body>
 </html>
